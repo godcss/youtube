@@ -1,0 +1,39 @@
+.diamond {
+    width: 200px;
+    height: 200px;
+    background-color: #ff6f61; /* Coral color */
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    animation: spinDiamond 1s linear 3 forwards, expandDiamond 3s forwards;
+  }
+  
+  @keyframes spinDiamond {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(1080deg); /* Three full rotations (360 * 3 = 1080 degrees) */
+    }
+  }
+  
+  @keyframes expandDiamond {
+    0% {
+      width: 200px;
+      height: 200px;
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    }
+    100% {
+      width: 100vw;
+      height: 100vh;
+      clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+    }
+  }
+  
+  body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Prevent scrolling when the diamond fills the page */
+  }
+  
